@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,24 +36,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.first_name = new System.Windows.Forms.TextBox();
+            this.last_name = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.contact = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.save = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.search = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.search = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -66,16 +64,6 @@
             this.label1.Size = new System.Drawing.Size(142, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add User Info";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User Name";
             // 
             // label3
             // 
@@ -90,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 97);
+            this.label4.Location = new System.Drawing.Point(14, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 17);
             this.label4.TabIndex = 3;
@@ -146,56 +134,50 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Role";
             // 
-            // textBox1
+            // first_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 56);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 29);
-            this.textBox1.TabIndex = 7;
+            this.first_name.Location = new System.Drawing.Point(122, 90);
+            this.first_name.Multiline = true;
+            this.first_name.Name = "first_name";
+            this.first_name.Size = new System.Drawing.Size(148, 29);
+            this.first_name.TabIndex = 7;
             // 
-            // textBox2
+            // last_name
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 97);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 29);
-            this.textBox2.TabIndex = 7;
+            this.last_name.Location = new System.Drawing.Point(122, 144);
+            this.last_name.Multiline = true;
+            this.last_name.Name = "last_name";
+            this.last_name.Size = new System.Drawing.Size(148, 29);
+            this.last_name.TabIndex = 7;
             // 
-            // textBox3
+            // password
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 144);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 29);
-            this.textBox3.TabIndex = 7;
+            this.password.Location = new System.Drawing.Point(122, 190);
+            this.password.Multiline = true;
+            this.password.Name = "password";
+            this.password.PasswordChar = '*';
+            this.password.Size = new System.Drawing.Size(148, 29);
+            this.password.TabIndex = 7;
             // 
-            // textBox4
+            // email
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 190);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 29);
-            this.textBox4.TabIndex = 7;
+            this.email.Location = new System.Drawing.Point(122, 240);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(148, 29);
+            this.email.TabIndex = 7;
             // 
-            // textBox5
+            // contact
             // 
-            this.textBox5.Location = new System.Drawing.Point(122, 240);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 29);
-            this.textBox5.TabIndex = 7;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(122, 324);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 29);
-            this.textBox6.TabIndex = 7;
+            this.contact.Location = new System.Drawing.Point(122, 324);
+            this.contact.Multiline = true;
+            this.contact.Name = "contact";
+            this.contact.Size = new System.Drawing.Size(148, 29);
+            this.contact.TabIndex = 7;
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownWidth = 170;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(122, 289);
@@ -246,12 +228,34 @@
             this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(385, 97);
+            this.listView1.Location = new System.Drawing.Point(385, 93);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(501, 282);
+            this.listView1.Size = new System.Drawing.Size(549, 282);
             this.listView1.TabIndex = 11;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 135;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Email";
+            this.columnHeader3.Width = 104;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Role";
+            this.columnHeader4.Width = 250;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Contact Naumber";
             // 
             // search
             // 
@@ -275,27 +279,7 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "User Name";
-            this.columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 139;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Email";
-            this.columnHeader3.Width = 104;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Role";
-            this.columnHeader4.Width = 250;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Contact Naumber";
+            this.columnHeader1.Text = "#";
             // 
             // User
             // 
@@ -307,13 +291,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contact);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.password);
+            this.Controls.Add(this.last_name);
+            this.Controls.Add(this.first_name);
             this.Controls.Add(this.search);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -321,7 +304,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Name = "User";
@@ -336,7 +318,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -344,12 +325,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox first_name;
+        private System.Windows.Forms.TextBox last_name;
+        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox contact;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button cancel;
@@ -357,10 +337,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

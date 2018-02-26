@@ -44,7 +44,7 @@ namespace HotelReservation
                 {
                     string pass = encryption(password.Text);
                     string uname = username.Text;
-                    Com.CommandText = "SELECT count(id),users.* FROM users WHERE username= '" + uname + "' AND password= '" + pass + "'";
+                    Com.CommandText = "SELECT count(id),users.* FROM users WHERE email= '" + uname + "' AND password= '" + pass + "'";
                     reader = Com.ExecuteReader();
                     while (reader.Read())
                     {

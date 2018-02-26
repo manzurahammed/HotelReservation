@@ -31,14 +31,14 @@
             this.password = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // password
             // 
             this.password.Location = new System.Drawing.Point(160, 134);
-            this.password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -49,7 +49,7 @@
             // 
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.Location = new System.Drawing.Point(160, 65);
-            this.username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.username.Margin = new System.Windows.Forms.Padding(4);
             this.username.Multiline = true;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(177, 37);
@@ -65,16 +65,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Password";
             // 
-            // label2
+            // Email
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "User Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.Email.AutoSize = true;
+            this.Email.Location = new System.Drawing.Point(56, 75);
+            this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(79, 17);
+            this.Email.TabIndex = 3;
+            this.Email.Text = "User Name";
+            this.Email.Click += new System.EventHandler(this.label2_Click);
             // 
             // login
             // 
@@ -98,12 +98,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 332);
             this.Controls.Add(this.login);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Email);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.username);
             this.Controls.Add(this.password);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -117,7 +117,7 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Email;
         private System.Windows.Forms.Button login;
     }
 }
