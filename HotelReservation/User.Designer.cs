@@ -46,13 +46,13 @@
             this.cancel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.search = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -207,6 +207,7 @@
             this.cancel.TabIndex = 10;
             this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // label10
             // 
@@ -228,15 +229,20 @@
             this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(385, 93);
+            this.listView1.Location = new System.Drawing.Point(385, 90);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(549, 282);
+            this.listView1.Size = new System.Drawing.Size(483, 321);
             this.listView1.TabIndex = 11;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "#";
             // 
             // columnHeader2
             // 
@@ -267,28 +273,24 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.BackColor = System.Drawing.Color.Blue;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(628, 51);
+            this.button1.Location = new System.Drawing.Point(636, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 29);
-            this.button1.TabIndex = 9;
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 12;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.save_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "#";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(898, 432);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cancel);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.contact);
@@ -336,11 +338,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox search;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button button1;
     }
 }

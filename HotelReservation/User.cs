@@ -34,7 +34,7 @@ namespace HotelReservation
             Mycon.con.Open();
             combvalue();
             loadUserList();
-            
+            comboBox1.SelectedIndex = 0;
 
         }
 
@@ -47,7 +47,7 @@ namespace HotelReservation
             }
             else
             {
-                //Com.CommandText = "SELECT * FROM production_staff WHERE prod_staff_fn LIKE '" + search.Text + "%' ORDER BY prod_staff_fn ASC";
+                Com.CommandText = "SELECT id,first_name,last_name,email,role,contact_number FROM users where email like '" + search.Text + "%' ORDER BY id ASC";
             }
             reader = Com.ExecuteReader();
             while (reader.Read())
@@ -122,13 +122,39 @@ namespace HotelReservation
             {
                 MessageBox.Show("Email Already Exist");
             }
-
-            Com.CommandText = "Insert into users(email,first_name,last_name,password,role,contact_number) Values('" + email.Text + "','" + first_name.Text + "','" + last_name.Text + "','" + encryption(password.Text) + "','" + comboBox1.SelectedIndex + "','" + contact.Text + "')";
-            Com.ExecuteNonQuery();
-            Com.Dispose();
-            MessageBox.Show("New User Create SuccessFUlly");
-            reset();
-            loadUserList();
+            else
+            {
+                if (Sstatus == "save")
+                {
+                    Com.CommandText = "Insert into users(email,first_name,last_name,password,role,contact_number) Values('" + email.Text + "','" + first_name.Text + "','" + last_name.Text + "','" + encryption(password.Text) + "','" + comboBox1.SelectedIndex + "','" + contact.Text + "')";
+                    Com.ExecuteNonQuery();
+                    Com.Dispose();
+                    MessageBox.Show("New User Create SuccessFUlly");
+                    reset();
+                }
+                else if (Sstatus == "edit")
+                {
+                    int a = listView1.SelectedIndices[0];
+                    string id = listView1.Items[a].Text;
+                    string p = "";
+                    if (password.Text != "")
+                    {
+                        p = "',password='" + encryption(password.Text);
+                    }
+                    string d = Com.CommandText = "Update users set email='" + email.Text +
+                                "',first_name ='" + first_name.Text +
+                                "',contact_number ='" + contact.Text +
+                                "',last_name ='" + last_name.Text + p +
+                                "',role ='" + comboBox1.SelectedIndex + "' Where id='" + id + "'";
+                    MessageBox.Show(d);
+                    Com.ExecuteNonQuery();
+                    Com.Dispose();
+                    reset();
+                    Sstatus = "save";
+                    MessageBox.Show("Update User Info");
+                }
+                loadUserList();
+            }
         }
 
         bool IsValidEmail(string email)
@@ -146,8 +172,16 @@ namespace HotelReservation
 
         bool existemail(string email)
         {
-
-            Com.CommandText = "SELECT id FROM users WHERE email= '" + email + "'";
+            if (Sstatus=="edit")
+            {
+                int a = listView1.SelectedIndices[0];
+                string id = listView1.Items[a].Text;
+                Com.CommandText = "SELECT id FROM users WHERE email= '" + email + "' and id != '" + id +"'";
+            }else
+            {
+                Com.CommandText = "SELECT id FROM users WHERE email= '" + email + "'";
+            }
+            
             reader = Com.ExecuteReader();
             if (reader.HasRows)
             {
@@ -172,6 +206,7 @@ namespace HotelReservation
         public void reset()
         {
             email.Text = first_name.Text = last_name.Text = password.Text = contact.Text = "";
+            comboBox1.SelectedIndex = 0;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -195,6 +230,29 @@ namespace HotelReservation
             }
             reader.Close();
             Sstatus = "edit";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadUserList();
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            int a = listView1.SelectedIndices[0];
+            string id = listView1.Items[a].Text;
+            MessageBox.Show(id);
+            Com.CommandText = "delete from users WHERE id = '" + id + "'";
+            reader = Com.ExecuteReader();
+            reader.Close();
+            reset();
+            loadUserList();
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            Sstatus = "save";
+            reset();
         }
     }
 }
