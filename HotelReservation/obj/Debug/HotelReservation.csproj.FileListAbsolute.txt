@@ -11,3 +11,5 @@ E:\c#\HotelReservation\HotelReservation\bin\Debug\MySql.Data.dll
 E:\c#\HotelReservation\HotelReservation\bin\Debug\MySql.Data.xml
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Hotel.resources
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.User.resources
+E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Customer.resources
+E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Room.resources

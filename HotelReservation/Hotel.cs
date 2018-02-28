@@ -22,5 +22,17 @@ namespace HotelReservation
             User us = new User();
             us.Show();
         }
+
+        private void custoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer cs = new Customer();
+            cs.Show();
+        }
+
+        private void roomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Room room = new Room();
+            room.Show();
+        }
     }
 }

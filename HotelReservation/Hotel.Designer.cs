@@ -72,12 +72,14 @@
             this.custoToolStripMenuItem.Name = "custoToolStripMenuItem";
             this.custoToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.custoToolStripMenuItem.Text = "Customer";
+            this.custoToolStripMenuItem.Click += new System.EventHandler(this.custoToolStripMenuItem_Click);
             // 
             // roomToolStripMenuItem
             // 
             this.roomToolStripMenuItem.Name = "roomToolStripMenuItem";
             this.roomToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.roomToolStripMenuItem.Text = "Room";
+            this.roomToolStripMenuItem.Click += new System.EventHandler(this.roomToolStripMenuItem_Click);
             // 
             // reservationToolStripMenuItem
             // 
@@ -104,19 +106,19 @@
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // reservationToolStripMenuItem1
             // 
             this.reservationToolStripMenuItem1.Name = "reservationToolStripMenuItem1";
-            this.reservationToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.reservationToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.reservationToolStripMenuItem1.Text = "Reservation";
             // 
             // paymentToolStripMenuItem1
             // 
             this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
-            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.paymentToolStripMenuItem1.Text = "Payment";
             // 
             // label1
