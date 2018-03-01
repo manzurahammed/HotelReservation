@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `contact` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `address` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table hotel.customer: ~1 rows (approximately)
 DELETE FROM `customer`;
@@ -44,12 +44,16 @@ CREATE TABLE IF NOT EXISTS `room` (
   `rf` tinyint(4) NOT NULL DEFAULT '0',
   `ac` tinyint(4) NOT NULL DEFAULT '0',
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `book` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table hotel.room: ~0 rows (approximately)
+-- Dumping data for table hotel.room: ~1 rows (approximately)
 DELETE FROM `room`;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
+INSERT INTO `room` (`id`, `room_number`, `floor`, `bed`, `quality`, `tv`, `rf`, `ac`, `price`, `book`) VALUES
+	(1, 'a-331', 1, 2, 2, 1, 0, 1, 23.56, 0),
+	(2, 'a-45', 2, 1, 1, 0, 0, 1, 300.00, 1);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 
 -- Dumping structure for table hotel.users
