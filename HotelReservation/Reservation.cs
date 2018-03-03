@@ -32,6 +32,11 @@ namespace HotelReservation
             customerlist();
             roomlist();
             room_list.SelectedIndex = 0;
+            customer_list.SelectedIndex = 0;
+            check_in.MaxDate = DateTime.Today.AddMonths(1);
+            check_in.MinDate = DateTime.Today;
+            check_out.MinDate = DateTime.Today.AddDays(1);
+            check_out.MaxDate = DateTime.Today.AddMonths(1);
         }
 
         public void customerlist()
@@ -42,9 +47,10 @@ namespace HotelReservation
             
             while (reader.Read())
             {
-                //int.TryParse(t, out value);
-                customer_list.Items.AddRange("l");
-                customer_list.Items.Add("lol",reader["full_name"].ToString());
+                ComboboxItem item = new ComboboxItem();
+                item.Text = reader["full_name"].ToString();
+                item.Value = reader["id"].ToString();
+                customer_list.Items.Add(item);
             }
             reader.Close();
         }
@@ -110,6 +116,37 @@ namespace HotelReservation
                 }
             }
             return a;
+        }
+
+        private void book_Click(object sender, EventArgs e)
+        {
+            //string id = ((customer_list.SelectedItem as ComboboxItem).Value.ToString());
+            validation();
+        }
+
+        public void validation()
+        {
+
+            if (check_in.Text == "")
+            {
+                MessageBox.Show("Room Number is Required");
+            }
+            else if (check_out.Text == "")
+            {
+                MessageBox.Show("Room Price is Required");
+            }
+            else if (customer_list.SelectedIndex < 1)
+            {
+               MessageBox.Show("Select A Customer");
+
+            }
+            else if (listView1.Items.Count - 1 < 0)
+            {
+                MessageBox.Show("Select Room");
+            }else
+            {
+                MessageBox.Show("Save");
+            }
         }
     }
 }

@@ -239,14 +239,21 @@ namespace HotelReservation
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            int a = listView1.SelectedIndices[0];
-            string id = listView1.Items[a].Text;
-            MessageBox.Show(id);
-            Com.CommandText = "delete from users WHERE id = '" + id + "'";
-            reader = Com.ExecuteReader();
-            reader.Close();
-            reset();
-            loadUserList();
+            DialogResult dr = MessageBox.Show("Are you sure to delete row?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                int a = listView1.SelectedIndices[0];
+                string id = listView1.Items[a].Text;
+                MessageBox.Show(id);
+                Com.CommandText = "delete from users WHERE id = '" + id + "'";
+                reader = Com.ExecuteReader();
+                reader.Close();
+                reset();
+                loadUserList();
+            }else
+            {
+                reset();
+            }
         }
 
         private void cancel_Click(object sender, EventArgs e)

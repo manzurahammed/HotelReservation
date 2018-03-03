@@ -35,6 +35,9 @@
             this.room_list = new System.Windows.Forms.ComboBox();
             this.customer_list = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.book = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,11 +45,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.hotelDataSet = new HotelReservation.hotelDataSet();
             this.hotelDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.check_out = new System.Windows.Forms.DateTimePicker();
+            this.check_in = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +122,21 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "#";
+            this.columnHeader3.Width = 115;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Room Number";
+            this.columnHeader1.Width = 199;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Price";
+            this.columnHeader2.Width = 224;
+            // 
             // book
             // 
             this.book.BackColor = System.Drawing.Color.Green;
@@ -128,6 +147,7 @@
             this.book.TabIndex = 6;
             this.book.Text = "Book";
             this.book.UseVisualStyleBackColor = false;
+            this.book.Click += new System.EventHandler(this.book_Click);
             // 
             // label4
             // 
@@ -182,16 +202,6 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "0.0";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Room Number";
-            this.columnHeader1.Width = 199;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Price";
-            this.columnHeader2.Width = 224;
-            // 
             // hotelDataSet
             // 
             this.hotelDataSet.DataSetName = "hotelDataSet";
@@ -202,16 +212,48 @@
             this.hotelDataSetBindingSource.DataSource = this.hotelDataSet;
             this.hotelDataSetBindingSource.Position = 0;
             // 
-            // columnHeader3
+            // label5
             // 
-            this.columnHeader3.Text = "#";
-            this.columnHeader3.Width = 115;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(441, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Check Out";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(441, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Check In";
+            // 
+            // check_out
+            // 
+            this.check_out.Location = new System.Drawing.Point(514, 161);
+            this.check_out.Name = "check_out";
+            this.check_out.Size = new System.Drawing.Size(200, 20);
+            this.check_out.TabIndex = 11;
+            // 
+            // check_in
+            // 
+            this.check_in.Location = new System.Drawing.Point(514, 100);
+            this.check_in.MinDate = new System.DateTime(2018, 3, 3, 0, 0, 0, 0);
+            this.check_in.Name = "check_in";
+            this.check_in.Size = new System.Drawing.Size(200, 20);
+            this.check_in.TabIndex = 12;
             // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 421);
+            this.Controls.Add(this.check_in);
+            this.Controls.Add(this.check_out);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.total);
@@ -227,6 +269,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Reservation";
             this.Text = "Reservation";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Reservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).EndInit();
@@ -255,5 +298,9 @@
         private hotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource hotelDataSetBindingSource;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker check_out;
+        private System.Windows.Forms.DateTimePicker check_in;
     }
 }

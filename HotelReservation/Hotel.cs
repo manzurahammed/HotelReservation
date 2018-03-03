@@ -34,5 +34,11 @@ namespace HotelReservation
             Room room = new Room();
             room.Show();
         }
+
+        private void reservationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reservation res = new Reservation();
+            res.Show();
+        }
     }
 }

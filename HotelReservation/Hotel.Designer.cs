@@ -86,6 +86,7 @@
             this.reservationToolStripMenuItem.Name = "reservationToolStripMenuItem";
             this.reservationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.reservationToolStripMenuItem.Text = "Reservation";
+            this.reservationToolStripMenuItem.Click += new System.EventHandler(this.reservationToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
@@ -170,6 +171,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Hotel";
             this.Text = "Hotel";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

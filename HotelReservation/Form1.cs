@@ -15,7 +15,7 @@ namespace HotelReservation
     {
         MySqlCommand Com = new MySqlCommand();
         MySqlDataReader reader;
-        public static string myID, userName, role;
+        public static string myID, email, role;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -32,9 +32,9 @@ namespace HotelReservation
         {
             try
             {
-                if (username.Text == "")
+                if (user_email.Text == "")
                 {
-                    MessageBox.Show("Please Enter User Name", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please Enter Email", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (password.Text == "")
                 {
@@ -43,13 +43,13 @@ namespace HotelReservation
                 else
                 {
                     string pass = encryption(password.Text);
-                    string uname = username.Text;
-                    Com.CommandText = "SELECT count(id),users.* FROM users WHERE email= '" + uname + "' AND password= '" + pass + "'";
+                    string uemail = user_email.Text;
+                    Com.CommandText = "SELECT count(id),users.* FROM users WHERE email= '" + uemail + "' AND password= '" + pass + "'";
                     reader = Com.ExecuteReader();
                     while (reader.Read())
                     {
                         myID = reader[0].ToString();
-                        userName = reader["username"].ToString();
+                        email = reader["email"].ToString();
                         role = reader["role"].ToString();
                     }
                     reader.Close();
@@ -61,7 +61,7 @@ namespace HotelReservation
 
                     else
                     {
-                        MessageBox.Show("Welcome " + userName + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Welcome " + email + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Hotel h = new Hotel();
                         h.Show();
                         this.Hide();
