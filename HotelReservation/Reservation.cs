@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MySql.Data.MySqlClient;
 namespace HotelReservation
 {
@@ -83,14 +84,15 @@ namespace HotelReservation
                 {
                     if (!roomexist(reader["id"].ToString()))
                     {
+                        int indexx = listView1.Items.Count;
                         ListViewItem list = new ListViewItem(reader["id"].ToString());
                         list.SubItems.Add(reader["room_number"].ToString());
                         list.SubItems.Add(reader["price"].ToString());
                         listView1.Items.AddRange(new ListViewItem[] { list });
                         string t = total.Text;
-                        int value;
-                        int.TryParse(t, out value);
-                        value = value + reader.GetInt32("price");
+                        float value;
+                        float.TryParse(t, out value);
+                        value = value + reader.GetFloat("price");
                         total.Text = value.ToString();
                     } else
                     {
@@ -105,7 +107,8 @@ namespace HotelReservation
         bool roomexist(string rnumber)
         {
             bool a = false;
-            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            for (int i = listView1.Items.Count-1; i >= 0; i--)
+
             {
                 var item = listView1.Items[i];
                 if (item.Text.ToLower().Contains(rnumber.ToLower()))
@@ -145,7 +148,194 @@ namespace HotelReservation
                 MessageBox.Show("Select Room");
             }else
             {
-                MessageBox.Show("Save");
+                
+               
+                if (check_in.Value.Date >= check_out.Value.Date)
+                {
+                    MessageBox.Show("Check Out Time is To earlier");
+                }else
+                {
+                    string cus_id = ((customer_list.SelectedItem as ComboboxItem).Value.ToString());
+                    string child = (textBox3.Text != "") ? textBox3.Text : "0";
+                    string adult = (textBox2.Text != "") ? textBox2.Text : "1";
+                    string totalp = (textBox1.Text != "") ? textBox1.Text : "0"; ;
+                    string chcekin = check_in.Value.ToString("yyyy-MM-dd");
+                    string chcekout = check_out.Value.ToString("yyyy-MM-dd");
+                    Com.CommandText = "Insert into reservation(customer_id,chcek_in,check_out,adult,child,total,paid) Values('" + cus_id + "','" + chcekin + "','" + chcekout + "','" + adult + "','" + child + "','" + total.Text + "','" + totalp + "')";
+                    int lastiInId = Com.ExecuteNonQuery();
+                    Com.CommandText = "Insert into payment(res_id,amount) Values('" + lastiInId + "','" + totalp + "')";
+                    Com.ExecuteNonQuery();
+                    Com.Dispose();
+                    BulkToMySQL(lastiInId);
+                    bupdate();
+                    reset();
+                }
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void test()
+        {
+            foreach (ListViewItem itemRow in this.listView1.Items)
+            {
+                MessageBox.Show((itemRow.SubItems[1]).ToString());
+            }
+        }
+
+        public void reset()
+        {
+            listView1.Items.Clear();
+            textBox1.Text = textBox2.Text = textBox3.Text = "";
+            due.Text = total.Text = "0.0";
+            customer_list.SelectedIndex = room_list.SelectedIndex = 0;
+
+
+        }
+
+        public void BulkToMySQL(int lid)
+        {
+            string ConnectionString = "server=localhost; uid=root; password=; database=hotel";
+            StringBuilder sCommand = new StringBuilder("INSERT INTO room_res (res_id, room_number,price) VALUES ");
+            using (MySqlConnection mConnection = new MySqlConnection(ConnectionString))
+            {
+                List<string> Rows = new List<string>();
+                foreach (ListViewItem itemRow in this.listView1.Items)
+                {
+                    Rows.Add(string.Format("('{0}','{1}','{2}')", MySqlHelper.EscapeString(lid.ToString()), MySqlHelper.EscapeString(itemRow.SubItems[1].Text), MySqlHelper.EscapeString(itemRow.SubItems[2].Text)));
+                }
+
+                sCommand.Append(string.Join(",", Rows));
+                sCommand.Append(";");
+                mConnection.Open();
+                using (MySqlCommand myCmd = new MySqlCommand(sCommand.ToString(), mConnection))
+                {
+                    myCmd.CommandType = CommandType.Text;
+                    myCmd.ExecuteNonQuery();
+                    mConnection.Dispose();
+                }
+            }
+        }
+
+        public void bupdate()
+        {
+            string qs = "";
+            
+            foreach (ListViewItem itemRow in this.listView1.Items)
+            {
+                qs += itemRow.SubItems[0].Text+",";
+            }
+            qs = qs.TrimEnd(',');
+            Com.CommandText = "Update room set book = 1 Where id in ( " + qs + " )";
+            Com.ExecuteNonQuery();
+            Com.Dispose();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keycheck(sender, e);
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keycheck(sender, e);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keycheck(sender,e);
+        }
+
+        public void keycheck(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                var confirmation = MessageBox.Show("Sure to Delete Room From List", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmation == DialogResult.Yes)
+                {
+                    for (int i = listView1.SelectedItems.Count - 1; i >= 0; i--)
+                    {
+                        ListViewItem itm = listView1.SelectedItems[i];
+                        string price = itm.SubItems[2].Text;
+                        string t = total.Text;
+                        float value,pr;
+                        float.TryParse(t, out value);
+                        float.TryParse(price, out pr);
+                        value = value- pr;
+                        total.Text = value.ToString();
+                        listView1.Items[itm.Index].Remove();
+                    }
+                }
+            }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                string t = total.Text;
+                float value, pr;
+                float.TryParse(t, out value);
+                float.TryParse(textBox1.Text.ToString(), out pr);
+                if (value < pr)
+                {
+                    due.Text = "0.0";
+                }else{
+                    value = value - pr;
+                    due.Text = value.ToString();
+                }
+            }else
+            {
+                due.Text = "0.0";
             }
         }
     }

@@ -24,14 +24,54 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `contact` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `address` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table hotel.customer: ~1 rows (approximately)
+-- Dumping data for table hotel.customer: ~3 rows (approximately)
 DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`id`, `full_name`, `email`, `contact`, `address`) VALUES
-	(1, 'asd', 'asd', '3435', 'sdas sds');
+	(1, 'asd', 'asd', '3435', 'sdas sds'),
+	(3, 'asd', 'asd@tet.com', '3435', 'sdas sds');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
+-- Dumping structure for table hotel.payment
+CREATE TABLE IF NOT EXISTS `payment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `res_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table hotel.payment: ~1 rows (approximately)
+DELETE FROM `payment`;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+INSERT INTO `payment` (`id`, `res_id`, `amount`) VALUES
+	(1, 1, 56.00),
+	(2, 1, 23.00),
+	(3, 1, 67.00);
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+
+-- Dumping structure for table hotel.reservation
+CREATE TABLE IF NOT EXISTS `reservation` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL DEFAULT '0',
+  `chcek_in` date NOT NULL,
+  `check_out` date NOT NULL,
+  `adult` int(11) DEFAULT '0',
+  `child` int(11) DEFAULT '0',
+  `total` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `paid` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `r_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table hotel.reservation: ~0 rows (approximately)
+DELETE FROM `reservation`;
+/*!40000 ALTER TABLE `reservation` DISABLE KEYS */;
+INSERT INTO `reservation` (`id`, `customer_id`, `chcek_in`, `check_out`, `adult`, `child`, `total`, `paid`, `r_date`) VALUES
+	(1, 3, '2018-03-04', '2018-03-05', 3, 1, 323.56, 23.00, '2018-03-04 02:58:32'),
+	(2, 1, '2018-03-04', '2018-03-05', 1, 0, 323.56, 67.00, '2018-03-04 03:01:13');
+/*!40000 ALTER TABLE `reservation` ENABLE KEYS */;
 
 -- Dumping structure for table hotel.room
 CREATE TABLE IF NOT EXISTS `room` (
@@ -46,15 +86,34 @@ CREATE TABLE IF NOT EXISTS `room` (
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
   `book` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table hotel.room: ~1 rows (approximately)
+-- Dumping data for table hotel.room: ~2 rows (approximately)
 DELETE FROM `room`;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
 INSERT INTO `room` (`id`, `room_number`, `floor`, `bed`, `quality`, `tv`, `rf`, `ac`, `price`, `book`) VALUES
-	(1, 'a-331', 1, 2, 2, 1, 0, 1, 23.56, 0),
-	(2, 'a-45', 2, 1, 1, 0, 0, 1, 300.00, 1);
+	(1, 'a-331', 1, 2, 2, 1, 0, 1, 23.56, 1),
+	(3, 'a-45', 2, 1, 1, 0, 0, 1, 300.00, 1);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
+
+-- Dumping structure for table hotel.room_res
+CREATE TABLE IF NOT EXISTS `room_res` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `res_id` int(11) NOT NULL,
+  `room_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table hotel.room_res: ~0 rows (approximately)
+DELETE FROM `room_res`;
+/*!40000 ALTER TABLE `room_res` DISABLE KEYS */;
+INSERT INTO `room_res` (`id`, `res_id`, `room_number`, `price`) VALUES
+	(1, 1, 'a-331', 23.56),
+	(2, 1, 'a-45', 300.00),
+	(3, 1, 'a-331', 23.56),
+	(4, 1, 'a-45', 300.00);
+/*!40000 ALTER TABLE `room_res` ENABLE KEYS */;
 
 -- Dumping structure for table hotel.users
 CREATE TABLE IF NOT EXISTS `users` (

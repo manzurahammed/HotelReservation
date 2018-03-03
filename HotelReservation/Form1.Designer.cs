@@ -37,7 +37,9 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(160, 134);
+            this.password.BackColor = System.Drawing.Color.LightGray;
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.password.Location = new System.Drawing.Point(160, 144);
             this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Multiline = true;
             this.password.Name = "password";
@@ -48,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 144);
+            this.label1.Location = new System.Drawing.Point(46, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
@@ -58,7 +60,7 @@
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(56, 75);
+            this.Email.Location = new System.Drawing.Point(46, 75);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(42, 17);
@@ -68,12 +70,14 @@
             // 
             // login
             // 
-            this.login.BackColor = System.Drawing.Color.Lime;
-            this.login.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.login.BackColor = System.Drawing.Color.DarkGreen;
+            this.login.FlatAppearance.BorderColor = System.Drawing.Color.PaleGreen;
             this.login.FlatAppearance.BorderSize = 0;
-            this.login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.login.Location = new System.Drawing.Point(160, 217);
+            this.login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.login.ForeColor = System.Drawing.Color.White;
+            this.login.Location = new System.Drawing.Point(160, 218);
             this.login.Margin = new System.Windows.Forms.Padding(0);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(124, 43);
@@ -84,11 +88,12 @@
             // 
             // user_email
             // 
+            this.user_email.BackColor = System.Drawing.Color.LightGray;
+            this.user_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.user_email.Location = new System.Drawing.Point(160, 72);
             this.user_email.Margin = new System.Windows.Forms.Padding(4);
             this.user_email.Multiline = true;
             this.user_email.Name = "user_email";
-            this.user_email.PasswordChar = '*';
             this.user_email.Size = new System.Drawing.Size(177, 37);
             this.user_email.TabIndex = 0;
             // 
@@ -96,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(404, 332);
             this.Controls.Add(this.login);
             this.Controls.Add(this.Email);
@@ -103,6 +109,7 @@
             this.Controls.Add(this.user_email);
             this.Controls.Add(this.password);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Login";
