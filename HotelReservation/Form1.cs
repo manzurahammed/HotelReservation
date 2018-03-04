@@ -19,6 +19,7 @@ namespace HotelReservation
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Mycon.con.Close();
             Mycon.con.Open();
         }
 

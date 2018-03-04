@@ -40,5 +40,24 @@ namespace HotelReservation
             Reservation res = new Reservation();
             res.Show();
         }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment pay = new Payment();
+            pay.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 fr = new Form1();
+            this.Hide();
+            fr.Show();
+        }
+
+        private void reservationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReservationF resf = new ReservationF();
+            resf.Show();
+        }
     }
 }

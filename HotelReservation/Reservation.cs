@@ -30,6 +30,7 @@ namespace HotelReservation
         {
             Mycon.con.Close();
             Mycon.con.Open();
+            roombookc();
             customerlist();
             roomlist();
             room_list.SelectedIndex = 0;
@@ -58,6 +59,7 @@ namespace HotelReservation
 
         public void roomlist()
         {
+            room_list.Items.Clear();
             Com.CommandText = "SELECT id,room_number FROM room WHERE book <> '" + 1 + "'";
             reader = Com.ExecuteReader();
             room_list.Items.Insert(0, "< Select Room >");
@@ -92,13 +94,12 @@ namespace HotelReservation
                         string t = total.Text;
                         float value;
                         float.TryParse(t, out value);
-                        value = value + reader.GetFloat("price");
+                        value = value + (reader.GetFloat("price") * getday());
                         total.Text = value.ToString();
                     } else
                     {
                         MessageBox.Show("Room Already Add In List");
                     }
-                    
                 }
             }
             reader.Close();
@@ -123,7 +124,6 @@ namespace HotelReservation
 
         private void book_Click(object sender, EventArgs e)
         {
-            //string id = ((customer_list.SelectedItem as ComboboxItem).Value.ToString());
             validation();
         }
 
@@ -161,13 +161,24 @@ namespace HotelReservation
                     string totalp = (textBox1.Text != "") ? textBox1.Text : "0"; ;
                     string chcekin = check_in.Value.ToString("yyyy-MM-dd");
                     string chcekout = check_out.Value.ToString("yyyy-MM-dd");
-                    Com.CommandText = "Insert into reservation(customer_id,chcek_in,check_out,adult,child,total,paid) Values('" + cus_id + "','" + chcekin + "','" + chcekout + "','" + adult + "','" + child + "','" + total.Text + "','" + totalp + "')";
+                    float ti, pi;
+                    float.TryParse(total.Text, out ti);
+                    float.TryParse(totalp, out pi);
+                    float due = (ti <= pi)?0: ti-pi;
+                    Com.CommandText = "Insert into reservation(customer_id,chcek_in,check_out,adult,child,total) Values('" + cus_id + "','" + chcekin + "','" + chcekout + "','" + adult + "','" + child + "','" + total.Text + "')";
                     int lastiInId = Com.ExecuteNonQuery();
-                    Com.CommandText = "Insert into payment(res_id,amount) Values('" + lastiInId + "','" + totalp + "')";
+                    if (pi>0)
+                    {
+                        Com.CommandText = "Insert into payment(cu_id,amount) Values('" + cus_id + "','" + totalp + "')";
+                        Com.ExecuteNonQuery();
+                    }
+                    Com.CommandText = " UPDATE customer t2,( SELECT due FROM customer where id = "+ cus_id + " ) t1 SET t2.due = "+ due + "+t1.due WHERE t2.id = " +cus_id;
                     Com.ExecuteNonQuery();
                     Com.Dispose();
-                    BulkToMySQL(lastiInId);
+                    BulkToMySQL(lastiInId, chcekout);
                     bupdate();
+                    roombookc();
+                    roomlist();
                     reset();
                 }
 
@@ -193,20 +204,18 @@ namespace HotelReservation
             textBox1.Text = textBox2.Text = textBox3.Text = "";
             due.Text = total.Text = "0.0";
             customer_list.SelectedIndex = room_list.SelectedIndex = 0;
-
-
         }
 
-        public void BulkToMySQL(int lid)
+        public void BulkToMySQL(int lid,string chout)
         {
             string ConnectionString = "server=localhost; uid=root; password=; database=hotel";
-            StringBuilder sCommand = new StringBuilder("INSERT INTO room_res (res_id, room_number,price) VALUES ");
+            StringBuilder sCommand = new StringBuilder("INSERT INTO room_res (res_id, room_number,check_out,price) VALUES ");
             using (MySqlConnection mConnection = new MySqlConnection(ConnectionString))
             {
                 List<string> Rows = new List<string>();
                 foreach (ListViewItem itemRow in this.listView1.Items)
                 {
-                    Rows.Add(string.Format("('{0}','{1}','{2}')", MySqlHelper.EscapeString(lid.ToString()), MySqlHelper.EscapeString(itemRow.SubItems[1].Text), MySqlHelper.EscapeString(itemRow.SubItems[2].Text)));
+                    Rows.Add(string.Format("('{0}','{1}','{2}','{3}')", MySqlHelper.EscapeString(lid.ToString()), MySqlHelper.EscapeString(itemRow.SubItems[1].Text), MySqlHelper.EscapeString(chout), MySqlHelper.EscapeString(itemRow.SubItems[2].Text)));
                 }
 
                 sCommand.Append(string.Join(",", Rows));
@@ -260,6 +269,14 @@ namespace HotelReservation
 
         }
 
+        public void roombookc()
+        {
+            DateTime today = DateTime.Today;
+            Com.CommandText = "update room set book = 0 where room_number in (select room_number from room_res where check_out <= '"+ today.ToString("yyyy-MM-dd") + "')";
+            Com.ExecuteNonQuery();
+            Com.Dispose();
+        }
+
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             keycheck(sender, e);
@@ -310,7 +327,7 @@ namespace HotelReservation
                         float value,pr;
                         float.TryParse(t, out value);
                         float.TryParse(price, out pr);
-                        value = value- pr;
+                        value = value- (pr * getday() );
                         total.Text = value.ToString();
                         listView1.Items[itm.Index].Remove();
                     }
@@ -336,6 +353,22 @@ namespace HotelReservation
             }else
             {
                 due.Text = "0.0";
+            }
+        }
+
+        public int getday()
+        {
+            DateTime febDate = new DateTime(2014, 2, 20);
+            DateTime checkin = check_in.Value;
+            DateTime checkout = check_out.Value;
+            TimeSpan tspan = checkout - checkin;
+            int differenceInDays = tspan.Days;
+            if (differenceInDays>0)
+            {
+                return differenceInDays+1;
+            }else
+            {
+                return 1;
             }
         }
     }

@@ -76,6 +76,12 @@
       <DependentUpon>hotelDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Mycon.cs" />
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs">
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationF.Designer.cs">
+      <DependentUpon>ReservationF.cs</DependentUpon>
     </Compile>
     <Compile Include="RmInfo.cs">
       <SubType>Form</SubType>
@@ -111,6 +123,9 @@
     <EmbeddedResource Include="Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -122,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationF.resx">
+      <DependentUpon>ReservationF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RmInfo.resx">
       <DependentUpon>RmInfo.cs</DependentUpon>

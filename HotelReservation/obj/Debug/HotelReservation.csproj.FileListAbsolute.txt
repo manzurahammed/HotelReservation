@@ -15,3 +15,5 @@ E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Customer.reso
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Room.resources
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.RmInfo.resources
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Reservation.resources
+E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Payment.resources
+E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.ReservationF.resources

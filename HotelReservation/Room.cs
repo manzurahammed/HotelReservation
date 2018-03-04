@@ -24,6 +24,15 @@ namespace HotelReservation
         private void save_Click(object sender, EventArgs e)
         {
             validation();
+            roombookc();
+        }
+
+        public void roombookc()
+        {
+            DateTime today = DateTime.Today;
+            Com.CommandText = "update room set book = 0 where room_number in (select room_number from room_res where check_out <= '" + today.ToString("yyyy-MM-dd") + "')";
+            Com.ExecuteNonQuery();
+            Com.Dispose();
         }
 
         bool existRoomNumber(string room_number)
@@ -125,6 +134,7 @@ namespace HotelReservation
             Sstatus = "save";
             Mycon.con.Close();
             Mycon.con.Open();
+            roombookc();
             loadRoomList();
             bedlist();
             floorList();
