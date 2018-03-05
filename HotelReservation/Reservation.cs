@@ -371,5 +371,39 @@ namespace HotelReservation
                 return 1;
             }
         }
+
+        private void check_out_ValueChanged(object sender, EventArgs e)
+        {
+            if (getTotalPrice()>0)
+            {
+                float a = getday() * getTotalPrice();
+                total.Text = a.ToString();
+            }
+        }
+
+        
+        public float getTotalPrice()
+        {
+            float total = 0;
+            if (listView1.Items.Count > 0)
+            {
+                foreach (ListViewItem itemRow in this.listView1.Items)
+                {
+                    float single = 0;
+                    float.TryParse(itemRow.SubItems[2].Text, out single);
+                    total += single;
+                }
+            }
+            return total;
+        }
+
+        private void check_in_ValueChanged(object sender, EventArgs e)
+        {
+            if (getTotalPrice() > 0)
+            {
+                float a = getday() * getTotalPrice();
+                total.Text = a.ToString();
+            }
+        }
     }
 }

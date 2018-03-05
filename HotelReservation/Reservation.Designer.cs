@@ -275,6 +275,7 @@
             this.check_out.Name = "check_out";
             this.check_out.Size = new System.Drawing.Size(298, 29);
             this.check_out.TabIndex = 11;
+            this.check_out.ValueChanged += new System.EventHandler(this.check_out_ValueChanged);
             // 
             // check_in
             // 
@@ -284,6 +285,7 @@
             this.check_in.Name = "check_in";
             this.check_in.Size = new System.Drawing.Size(298, 29);
             this.check_in.TabIndex = 12;
+            this.check_in.ValueChanged += new System.EventHandler(this.check_in_ValueChanged);
             // 
             // label10
             // 
