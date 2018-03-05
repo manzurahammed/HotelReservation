@@ -187,8 +187,9 @@
             // 
             // save
             // 
-            this.save.BackColor = System.Drawing.Color.Lime;
-            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.ForeColor = System.Drawing.Color.Black;
             this.save.Location = new System.Drawing.Point(22, 375);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(84, 36);
@@ -200,6 +201,7 @@
             // cancel
             // 
             this.cancel.BackColor = System.Drawing.Color.Red;
+            this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.ForeColor = System.Drawing.Color.White;
             this.cancel.Location = new System.Drawing.Point(142, 375);
             this.cancel.Name = "cancel";
@@ -273,8 +275,9 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(636, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 29);
@@ -287,6 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(898, 432);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);

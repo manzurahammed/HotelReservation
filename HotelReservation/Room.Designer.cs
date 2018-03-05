@@ -55,9 +55,9 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.search = new System.Windows.Forms.Button();
             this.search_text = new System.Windows.Forms.TextBox();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -226,6 +226,7 @@
             // res
             // 
             this.res.BackColor = System.Drawing.Color.Red;
+            this.res.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res.ForeColor = System.Drawing.Color.White;
             this.res.Location = new System.Drawing.Point(153, 377);
             this.res.Name = "res";
@@ -237,8 +238,9 @@
             // 
             // save
             // 
-            this.save.BackColor = System.Drawing.Color.Lime;
-            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.ForeColor = System.Drawing.Color.Black;
             this.save.Location = new System.Drawing.Point(26, 377);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(102, 35);
@@ -299,10 +301,15 @@
             this.columnHeader6.Text = "Price";
             this.columnHeader6.Width = 69;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Booked";
+            // 
             // search
             // 
-            this.search.BackColor = System.Drawing.Color.Blue;
-            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.ForeColor = System.Drawing.Color.Black;
             this.search.Location = new System.Drawing.Point(552, 60);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(75, 30);
@@ -319,14 +326,11 @@
             this.search_text.Size = new System.Drawing.Size(164, 27);
             this.search_text.TabIndex = 21;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Booked";
-            // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(890, 424);
             this.Controls.Add(this.search_text);
             this.Controls.Add(this.search);

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.search_box = new System.Windows.Forms.TextBox();
-            this.search = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,6 +37,8 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.search_box = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -61,24 +61,6 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // search_box
-            // 
-            this.search_box.Location = new System.Drawing.Point(16, 35);
-            this.search_box.Multiline = true;
-            this.search_box.Name = "search_box";
-            this.search_box.Size = new System.Drawing.Size(154, 29);
-            this.search_box.TabIndex = 2;
-            // 
-            // search
-            // 
-            this.search.Location = new System.Drawing.Point(191, 35);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(84, 29);
-            this.search.TabIndex = 3;
-            this.search.Text = "Search";
-            this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.search_Click);
             // 
             // columnHeader1
             // 
@@ -118,10 +100,29 @@
             this.columnHeader8.Text = "Date";
             this.columnHeader8.Width = 130;
             // 
+            // search_box
+            // 
+            this.search_box.Location = new System.Drawing.Point(16, 35);
+            this.search_box.Multiline = true;
+            this.search_box.Name = "search_box";
+            this.search_box.Size = new System.Drawing.Size(154, 29);
+            this.search_box.TabIndex = 2;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(191, 35);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(84, 29);
+            this.search.TabIndex = 3;
+            this.search.Text = "Search";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
             // ReservationF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(855, 411);
             this.Controls.Add(this.search);
             this.Controls.Add(this.search_box);

@@ -14,11 +14,17 @@ namespace HotelReservation
     {
         MySqlCommand Com = new MySqlCommand();
         MySqlDataReader reader;
+        Timer timer = new Timer();
         public Hotel()
         {
             InitializeComponent();
             Com.Connection = Mycon.con;
+            timer.Tick += new EventHandler(timer1_Tick); // Everytime timer ticks, timer_Tick will be called
+            timer.Interval = (1000) * (10);           // Timer will tick evert second
+            timer.Enabled = true;                       // Enable the timer
+            timer.Start();
         }
+
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -190,6 +196,24 @@ namespace HotelReservation
             loadCustomer();
             loadtotalrestoday();
             loadpaymenttoday();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            loadTotalDue();
+            loadCustomer();
+            loadtotalrestoday();
+            loadpaymenttoday();
+            roombookc();
+
+        }
+
+        public void roombookc()
+        {
+            DateTime today = DateTime.Today;
+            Com.CommandText = "update room set book = 0 where room_number in (select room_number from room_res where check_out <= '" + today.ToString("yyyy-MM-dd") + "')";
+            Com.ExecuteNonQuery();
+            Com.Dispose();
         }
     }
 }

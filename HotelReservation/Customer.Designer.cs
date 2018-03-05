@@ -131,8 +131,9 @@
             // 
             // save
             // 
-            this.save.BackColor = System.Drawing.Color.Lime;
-            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.ForeColor = System.Drawing.Color.Black;
             this.save.Location = new System.Drawing.Point(35, 313);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(85, 35);
@@ -161,9 +162,10 @@
             // 
             // search
             // 
-            this.search.BackColor = System.Drawing.Color.Aqua;
+            this.search.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.search.ForeColor = System.Drawing.Color.Black;
-            this.search.Location = new System.Drawing.Point(657, 61);
+            this.search.Location = new System.Drawing.Point(641, 63);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(76, 33);
             this.search.TabIndex = 13;
@@ -231,6 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 423);
             this.Controls.Add(this.setn);
             this.Controls.Add(this.search);

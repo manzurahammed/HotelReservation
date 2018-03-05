@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 107);
+            this.label1.Location = new System.Drawing.Point(38, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 0;
@@ -66,17 +66,17 @@
             // 
             this.room_price.AutoSize = true;
             this.room_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_price.Location = new System.Drawing.Point(359, 243);
+            this.room_price.Location = new System.Drawing.Point(168, 312);
             this.room_price.Name = "room_price";
-            this.room_price.Size = new System.Drawing.Size(43, 20);
+            this.room_price.Size = new System.Drawing.Size(31, 20);
             this.room_price.TabIndex = 0;
-            this.room_price.Text = "price";
+            this.room_price.Text = "0.0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 155);
+            this.label3.Location = new System.Drawing.Point(38, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 0;
@@ -86,38 +86,38 @@
             // 
             this.room_bed.AutoSize = true;
             this.room_bed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_bed.Location = new System.Drawing.Point(185, 155);
+            this.room_bed.Location = new System.Drawing.Point(168, 136);
             this.room_bed.Name = "room_bed";
-            this.room_bed.Size = new System.Drawing.Size(43, 20);
+            this.room_bed.Size = new System.Drawing.Size(35, 20);
             this.room_bed.TabIndex = 0;
-            this.room_bed.Text = "price";
+            this.room_bed.Text = "N/A";
             // 
             // room_ac
             // 
             this.room_ac.AutoSize = true;
             this.room_ac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_ac.Location = new System.Drawing.Point(185, 243);
+            this.room_ac.Location = new System.Drawing.Point(168, 269);
             this.room_ac.Name = "room_ac";
-            this.room_ac.Size = new System.Drawing.Size(43, 20);
+            this.room_ac.Size = new System.Drawing.Size(35, 20);
             this.room_ac.TabIndex = 0;
-            this.room_ac.Text = "price";
+            this.room_ac.Text = "N/A";
             this.room_ac.Click += new System.EventHandler(this.label4_Click);
             // 
             // room_tv
             // 
             this.room_tv.AutoSize = true;
             this.room_tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_tv.Location = new System.Drawing.Point(185, 201);
+            this.room_tv.Location = new System.Drawing.Point(168, 180);
             this.room_tv.Name = "room_tv";
-            this.room_tv.Size = new System.Drawing.Size(43, 20);
+            this.room_tv.Size = new System.Drawing.Size(35, 20);
             this.room_tv.TabIndex = 0;
-            this.room_tv.Text = "price";
+            this.room_tv.Text = "N/A";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(65, 243);
+            this.label5.Location = new System.Drawing.Point(33, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 20);
             this.label5.TabIndex = 0;
@@ -127,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 201);
+            this.label4.Location = new System.Drawing.Point(38, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(247, 201);
+            this.label6.Location = new System.Drawing.Point(37, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 0;
@@ -148,17 +148,17 @@
             // 
             this.room_rf.AutoSize = true;
             this.room_rf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_rf.Location = new System.Drawing.Point(359, 201);
+            this.room_rf.Location = new System.Drawing.Point(168, 225);
             this.room_rf.Name = "room_rf";
-            this.room_rf.Size = new System.Drawing.Size(43, 20);
+            this.room_rf.Size = new System.Drawing.Size(35, 20);
             this.room_rf.TabIndex = 0;
-            this.room_rf.Text = "price";
+            this.room_rf.Text = "N/A";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(247, 243);
+            this.label7.Location = new System.Drawing.Point(33, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
             this.label7.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(89, 7);
+            this.label8.Location = new System.Drawing.Point(34, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(233, 37);
             this.label8.TabIndex = 0;
@@ -178,17 +178,18 @@
             // 
             this.room_num.AutoSize = true;
             this.room_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.room_num.Location = new System.Drawing.Point(185, 107);
+            this.room_num.Location = new System.Drawing.Point(168, 87);
             this.room_num.Name = "room_num";
-            this.room_num.Size = new System.Drawing.Size(43, 20);
+            this.room_num.Size = new System.Drawing.Size(35, 20);
             this.room_num.TabIndex = 0;
-            this.room_num.Text = "price";
+            this.room_num.Text = "N/A";
             // 
             // RmInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 357);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(422, 422);
             this.Controls.Add(this.room_number);
             this.Controls.Add(this.room_num);
             this.Controls.Add(this.room_price);

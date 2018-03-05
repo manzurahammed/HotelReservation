@@ -34,11 +34,11 @@
             this.paid = new System.Windows.Forms.TextBox();
             this.pay = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.due = new System.Windows.Forms.Label();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.due = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -89,7 +89,7 @@
             this.pay.ForeColor = System.Drawing.Color.White;
             this.pay.Location = new System.Drawing.Point(161, 214);
             this.pay.Name = "pay";
-            this.pay.Size = new System.Drawing.Size(104, 47);
+            this.pay.Size = new System.Drawing.Size(94, 37);
             this.pay.TabIndex = 4;
             this.pay.Text = "Payment";
             this.pay.UseVisualStyleBackColor = false;
@@ -111,6 +111,21 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Customer Name";
+            this.columnHeader1.Width = 125;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Amount";
+            this.columnHeader2.Width = 156;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Date";
+            this.columnHeader3.Width = 145;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -131,26 +146,11 @@
             this.due.TabIndex = 0;
             this.due.Text = "0.0";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Customer Name";
-            this.columnHeader1.Width = 125;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Amount";
-            this.columnHeader2.Width = 156;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Date";
-            this.columnHeader3.Width = 145;
-            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(687, 445);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.pay);

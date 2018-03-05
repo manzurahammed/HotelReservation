@@ -113,7 +113,7 @@
             this.customer_list.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customer_list.FormattingEnabled = true;
             this.customer_list.ItemHeight = 21;
-            this.customer_list.Location = new System.Drawing.Point(318, 163);
+            this.customer_list.Location = new System.Drawing.Point(318, 171);
             this.customer_list.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.customer_list.Name = "customer_list";
             this.customer_list.Size = new System.Drawing.Size(262, 29);
@@ -156,12 +156,13 @@
             // 
             // book
             // 
-            this.book.BackColor = System.Drawing.Color.Green;
-            this.book.ForeColor = System.Drawing.Color.White;
+            this.book.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.book.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.book.ForeColor = System.Drawing.Color.Black;
             this.book.Location = new System.Drawing.Point(992, 573);
             this.book.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.book.Name = "book";
-            this.book.Size = new System.Drawing.Size(122, 61);
+            this.book.Size = new System.Drawing.Size(102, 38);
             this.book.TabIndex = 6;
             this.book.Text = "Book";
             this.book.UseVisualStyleBackColor = false;
@@ -335,6 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1348, 709);
             this.Controls.Add(this.check_in);
             this.Controls.Add(this.check_out);
