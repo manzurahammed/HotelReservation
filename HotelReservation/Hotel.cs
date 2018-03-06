@@ -215,5 +215,11 @@ namespace HotelReservation
             Com.ExecuteNonQuery();
             Com.Dispose();
         }
+
+        private void paymentToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PaymentR payr = new PaymentR();
+            payr.Show();
+        }
     }
 }

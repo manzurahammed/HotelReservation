@@ -133,6 +133,7 @@
             this.paymentToolStripMenuItem1.Name = "paymentToolStripMenuItem1";
             this.paymentToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.paymentToolStripMenuItem1.Text = "Payment";
+            this.paymentToolStripMenuItem1.Click += new System.EventHandler(this.paymentToolStripMenuItem1_Click);
             // 
             // logoutToolStripMenuItem
             // 

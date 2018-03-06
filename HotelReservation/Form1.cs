@@ -62,10 +62,19 @@ namespace HotelReservation
 
                     else
                     {
-                        MessageBox.Show("Welcome " + email + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Hotel h = new Hotel();
-                        h.Show();
-                        this.Hide();
+                        if (role=="3")
+                        {
+                            MessageBox.Show("Welcome " + email + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information); MessageBox.Show("Welcome " + email + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Hotel2 h2 = new Hotel2();
+                            h2.Show();
+                            this.Hide();
+                        }else
+                        {
+                            MessageBox.Show("Welcome " + email + " !!!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Hotel h = new Hotel();
+                            h.Show();
+                            this.Hide();
+                        }
                     }
                 }
             }

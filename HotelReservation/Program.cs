@@ -16,7 +16,7 @@ namespace HotelReservation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hotel());
+            Application.Run(new Form1());
         }
     }
 }

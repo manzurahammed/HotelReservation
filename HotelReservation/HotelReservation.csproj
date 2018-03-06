@@ -70,6 +70,12 @@
     <Compile Include="Hotel.Designer.cs">
       <DependentUpon>Hotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotel2.Designer.cs">
+      <DependentUpon>Hotel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="hotelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotel2.resx">
+      <DependentUpon>Hotel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

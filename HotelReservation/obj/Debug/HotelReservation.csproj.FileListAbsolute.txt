@@ -18,3 +18,4 @@ E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Reservation.r
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Payment.resources
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.ReservationF.resources
 E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.PaymentR.resources
+E:\c#\HotelReservation\HotelReservation\obj\Debug\HotelReservation.Hotel2.resources
