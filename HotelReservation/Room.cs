@@ -216,6 +216,7 @@ namespace HotelReservation
             room_number.Text = price.Text =  "";
             ac.Checked = tv.Checked = rf.Checked =  false;
             floor.SelectedIndex =  bed.SelectedIndex =  quality.SelectedIndex = 0;
+            Sstatus = "save";
         }
 
         public string getbed(string id)
